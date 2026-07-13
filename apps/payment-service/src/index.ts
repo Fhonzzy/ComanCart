@@ -7,7 +7,7 @@ app.get("/status", (c) => {
   return c.json({
     status: "OK",
     uptime: process.uptime(),
-    timestamp: Date.now()
+    timestamp: Date.now().toLocaleString()
   });
 });
 

@@ -1,0 +1,13 @@
+FROM node:22-alpine
+
+WORKDIR /app
+
+COPY . .
+
+RUN corepack enable
+
+RUN pnpm install
+
+EXPOSE 5000
+
+CMD [ "pnpm", "dev" ]
