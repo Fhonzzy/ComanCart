@@ -66,7 +66,7 @@ const CartPage = () => {
         <div className="w-full lg:w-7/12 shadow-lg border-1 border-gray-100 p-8 rounded-lg flex flex-col gap-8">
           {activeStep === 1 ? (
             cart.map((item) => (
-              <div className="flex items-center justify-between" key={item.id}>
+              <div className="flex items-center justify-between" key={item.id + item.selectedSize + item.selectedColor}>
                 <div className="flex gap-8">
                   <div className="relative w-32 h-32 bg-gray-50 rounded-lg overflow-hidden">
                     <Image
