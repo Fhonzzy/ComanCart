@@ -9,6 +9,7 @@ import {
   Plus,
   Projector,
   ChevronDown,
+  Shirt,
 } from "lucide-react";
 import {
   Sidebar,
@@ -108,17 +109,17 @@ const AppSidebar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>
-          <SidebarGroupLabel>Projects</SidebarGroupLabel>
+          <SidebarGroupLabel>Products</SidebarGroupLabel>
           <SidebarGroupAction>
-            <Plus /> <span className="sr-only">Add Project</span>
+            <Plus /> <span className="sr-only">Add Products</span>
           </SidebarGroupAction>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <Link href="/#">
-                    <Projector />
-                    See All Projects
+                    <Shirt />
+                    See All Products
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -126,7 +127,7 @@ const AppSidebar = () => {
                 <SidebarMenuButton asChild>
                   <Link href="/#">
                     <Plus />
-                    Add Project
+                    Add Products
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
