@@ -106,56 +106,6 @@ const SingleUserPage = () => {
               </HoverCard>
             </div>
           </div>
-          {/* INFORMATION CONTAINER */}
-          <div className="bg-primary-foreground p-4 rounded-lg">
-            <div className="flex items-center justify-between">
-              <h1 className="text-xl font-semibold">User Information</h1>
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button>Edit User</Button>
-                </SheetTrigger>
-                <EditUser />
-              </Sheet>
-            </div>
-            <div className="space-y-4 mt-4">
-              <div className="flex flex-col gap-2 mb-8">
-                <p className="text-sm text-muted-foreground">
-                  Profile completion
-                </p>
-                <Progress value={66} />
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold">Username:</span>
-                <span>john.doe</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold">Email:</span>
-                <span>john.doe@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold">Phone:</span>
-                <span>+1 234 5678</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold">Location:</span>
-                <span>New York, NY</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold">Role:</span>
-                <Badge>Admin</Badge>
-              </div>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              Joined on 2025.01.01
-            </p>
-          </div>
-          {/* CARD LIST CONTAINER */}
-          <div className="bg-primary-foreground p-4 rounded-lg">
-            <CardList title="Recent Transactions" />
-          </div>
-        </div>
-        {/* RIGHT */}
-        <div className="w-full xl:w-2/3 space-y-6">
           {/* USER CARD CONTAINER */}
           <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
             <div className="flex items-center gap-2">
@@ -172,6 +122,53 @@ const SingleUserPage = () => {
               in, quis quia.
             </p>
           </div>
+          {/* INFORMATION CONTAINER */}
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <div className="flex items-center justify-between">
+              <h1 className="text-xl font-semibold">User Information</h1>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button className="cursor-pointer">Edit User</Button>
+                </SheetTrigger>
+                <EditUser />
+              </Sheet>
+            </div>
+            <div className="space-y-4 mt-4">
+              <div className="flex flex-col gap-2 mb-8">
+                <p className="text-sm text-muted-foreground">
+                  Profile completion
+                </p>
+                <Progress value={66} />
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Fullname:</span>
+                <span>john.doe</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Email:</span>
+                <span>john.doe@gmail.com</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Phone:</span>
+                <span>+1 234 5678</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Address:</span>
+                <span>New York, NY</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">City:</span>
+              </div>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Joined on 2025.01.01
+            </p>
+          </div>
+         
+        </div>
+        {/* RIGHT */}
+        <div className="w-full xl:w-2/3 space-y-6">
+          
           {/* CHART CONTAINER */}
           <div className="bg-primary-foreground p-4 rounded-lg">
             <h1 className="text-xl font-semibold">User Activity</h1>
