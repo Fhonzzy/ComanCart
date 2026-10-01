@@ -42,6 +42,9 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./ui/collapsible";
+import { Sheet, SheetTrigger } from "./ui/sheet";
+import { Button } from "./ui/button";
+import EditUser from "./EditUser";
 
 const items = [
   {
@@ -117,10 +120,17 @@ const AppSidebar = () => {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link href="/#">
-                    <Shirt />
-                    See All Products
-                  </Link>
+                  <Sheet>
+                    <SheetTrigger asChild>
+                      <SidebarMenuButton asChild>
+                        <Link href="/#">
+                          <Shirt />
+                          See All Products
+                        </Link>
+                      </SidebarMenuButton>
+                    </SheetTrigger>
+                    <EditUser />
+                  </Sheet>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
