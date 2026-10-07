@@ -2,7 +2,7 @@
 import PaymentForm from "@/components/PaymentForm";
 import ShippingForm from "@/components/ShippingForm";
 import useCartStore from "@/store/cartStore";
-import { CartItemsType, ShippingFormInputs } from "@/Types/type";
+import {ShippingFormInputs } from "@/Types/type";
 import { ArrowRight, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -70,7 +70,7 @@ const CartPage = () => {
                 <div className="flex gap-8">
                   <div className="relative w-32 h-32 bg-gray-50 rounded-lg overflow-hidden">
                     <Image
-                      src={item.images[item.selectedColor]}
+                      src={item.images?.[item.selectedColor] || ""}
                       alt={item.name}
                       fill
                       className="object-contain"
