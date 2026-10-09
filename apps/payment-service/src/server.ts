@@ -1,13 +1,24 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
+import { clerkMiddleware, getAuth } from "@hono/clerk-auth";
+import { requireAuth } from "./middleware/authMiddleware.js";
 
 const app = new Hono();
+
+app.use("*", clerkMiddleware());
 
 app.get("/status", (c) => {
   return c.json({
     status: "OK",
     uptime: process.uptime(),
-    timestamp: Date.now().toLocaleString()
+    timestamp: Date.now().toLocaleString(),
+  });
+});
+
+app.get("/protected", requireAuth, (c) => {
+  return c.json({
+    message: "You are logged in!",
+    userId:c.get("userId")
   });
 });
 
@@ -28,4 +39,4 @@ const start = async () => {
   }
 };
 
-start()
+start();
