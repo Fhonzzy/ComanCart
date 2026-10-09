@@ -3,7 +3,8 @@ import Link from "next/link";
 import SearchBar from "./SearchBar";
 import { Bell, Home } from "lucide-react";
 import ShoppingCartIcon from "./ShoppingCartIcon";
-import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { Show, SignInButton } from "@clerk/nextjs";
+import ProfileButton from "./ProfileButton";
 
 const Navbar = () => {
   return (
@@ -29,16 +30,11 @@ const Navbar = () => {
         <Bell className="w-4 h-4 text-gray-600" />
         <ShoppingCartIcon />
         <Show when="signed-out">
-              <SignInButton />
-              <SignUpButton>
-                <button className="bg-purple-700 text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
-                  Sign Up
-                </button>
-              </SignUpButton>
-            </Show>
-            <Show when="signed-in">
-              <UserButton />
-            </Show>
+          <SignInButton />
+        </Show>
+        <Show when="signed-in">
+          <ProfileButton />
+        </Show>
       </div>
     </nav>
   );
