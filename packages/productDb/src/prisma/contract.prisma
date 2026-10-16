@@ -1,0 +1,43 @@
+// use prisma-8
+
+// model User {
+//   id        Int      @id @default(autoincrement())
+//   email     String   @unique
+//   username  String?
+//   name      String?
+//   posts     Post[]
+//   createdAt TimestamptzString @default(now())
+//   updatedAt temporal.updatedAtString()
+// }
+
+// model Post {
+//   id        Int      @id @default(autoincrement())
+//   title     String
+//   content   String?
+//   author    User     @relation(fields: [authorId], references: [id])
+//   authorId  Int
+//   createdAt TimestamptzString @default(now())
+//   updatedAt temporal.updatedAtString()
+// }
+
+model Product {
+  id        Int      @id @default(autoincrement())
+  name String
+  shortDescription String
+  description String
+  price Int
+  sizes String[]
+  colors String[]
+  images Json
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAt()
+  categorySlug String
+  category Category @relation(fields: [categorySlug], references: [slug])
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  name String
+  slug String @unique
+  products Product[]
+}

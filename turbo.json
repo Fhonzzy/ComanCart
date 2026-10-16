@@ -1,5 +1,6 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
+  "globalEnv": ["DATABASE_URL"], 
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -15,6 +16,17 @@
     "dev": {
       "cache": false,
       "persistent": true
-    }
+    },
+     "contract:emit": { 
+      "inputs": ["src/prisma/contract.prisma", "prisma.config.ts"], 
+      "outputs": ["src/prisma/contract.json", "src/prisma/contract.d.ts"] 
+    }, 
+    "migration:plan": { 
+      "dependsOn": ["contract:emit"], 
+      "cache": false
+    }, 
+    "db:migrate": { 
+      "cache": false
+    } 
   }
 }

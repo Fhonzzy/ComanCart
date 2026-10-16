@@ -5,7 +5,7 @@ const TestPage = async () => {
   const token = await getToken()
   console.log(token);
   
-    const res = await fetch("http://localhost:5001/protected", {
+    const res = await fetch("http://localhost:5002/protected", {
        headers: {
         Authorization: `Bearer ${token}`
        }
